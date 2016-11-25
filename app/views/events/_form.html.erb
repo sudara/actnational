@@ -22,18 +22,12 @@
   </div>
 
   <div class="field">
-    <%= f.label :category_id %>
-    <%= f.text_field :category_id %>
+    <%= f.select(:category_id, Category.all.collect {|c| [ c.name, c.id ] }) %>
   </div>
 
-  <div class="field">
-    <%= f.label :region_id %>
-    <%= f.text_field :region_id %>
-  </div>
 
   <div class="field">
-    <%= f.label :topic_id %>
-    <%= f.text_field :topic_id %>
+    <%= f.select(:topic, Topic.all.collect {|t| [ t.name, t.id ] }) %>
   </div>
 
   <div class="field">
@@ -71,6 +65,10 @@
     <%= f.text_field :address %>
   </div>
 
+  <div class="field">
+    <%= f.select(:region_id, Region.all.collect {|r| [ r.name, r.id ] }) %>
+  </div>
+  
   <div class="field">
     <%= f.label :city %>
     <%= f.text_field :city %>
