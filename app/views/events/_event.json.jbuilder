@@ -1,0 +1,2 @@
+json.extract! event, :id, :name, :description, :category_id, :region_id, :topic_id, :start, :end, :organizer, :contact_email, :contact_phone, :website, :address, :city, :state, :zip, :location_details, :created_at, :updated_at
+json.url event_url(event, format: :json)
