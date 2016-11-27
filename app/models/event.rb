@@ -6,7 +6,11 @@ class Event < ApplicationRecord
   validates :name, :start, :description, :region, :topic, :category, presence: true
   
   def self.upcoming
-    where('start > ?', Date.yesterday)
+    where('start > ?', Date.yesterday.to_datetime)
+  end
+  
+  def self.past
+    where('start < ?', Date.yesterday.to_datetime)
   end
   
 end
