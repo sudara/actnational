@@ -4,7 +4,7 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-    @events = Event.upcoming_by_region
+    @regions = Region.all.with_upcoming_events
   end
 
   # GET /events/1
