@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
 
+<%= link_to 'New Event', new_event_path %>
+
 <% @regions.each do |region| %>
   <h2>Events in <%= region.name %></h2>
   <table>
@@ -29,4 +31,4 @@
   </table>
 <% end %>
 
-<%= link_to 'New Event', new_event_path %>
+
