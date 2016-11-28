@@ -11,7 +11,7 @@ class PopulateFakeEvents < ActiveRecord::Migration[5.0]
       topic = topics[(topics.count * rand).round - 1]
       event = Event.new(
         name: "#{topic.name} #{category.name} event",
-        description: "Show that you care about #{topic.name} by participating our #{category.name} event in #{region.name}",
+        description: "Show that you care about #{topic.name} by participating in our #{category.name} event in #{region.name}",
         category: category,
         topic: topic,
         region: region,
