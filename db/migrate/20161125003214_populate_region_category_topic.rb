@@ -15,7 +15,7 @@ class PopulateRegionCategoryTopic < ActiveRecord::Migration[5.0]
     "Native/Indigenous Rights",
     "Police State",
     "Racial Justice",
-    "Womeyn",
+    "Womyn",
     "Afghanistan",
     "Americas",
     "Haiti",
