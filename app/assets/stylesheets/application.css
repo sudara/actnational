@@ -18,3 +18,8 @@ table{
   width:900px;
   text-align:left;
 }
+
+#map{
+  width:900px;
+  height:400px;
+}
