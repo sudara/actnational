@@ -4,7 +4,7 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-    @regions = Region.all.preload(future_events: [:topic, :category] )
+    @regions = Region.all.for_event_list
   end
 
   # GET /events/1

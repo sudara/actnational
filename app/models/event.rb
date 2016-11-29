@@ -5,6 +5,8 @@ class Event < ApplicationRecord
   
   validates :name, :start, :description, :region, :topic, :category, presence: true
   
+  has_permalink :name
+  
   def self.upcoming
     where('start > ?', Date.yesterday.to_datetime)
   end

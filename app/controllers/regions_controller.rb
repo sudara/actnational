@@ -10,6 +10,8 @@ class RegionsController < ApplicationController
   # GET /regions/1
   # GET /regions/1.json
   def show
+    @events = @region.for_event_list
+    @regions = Region.all
   end
 
   # GET /regions/new
@@ -64,7 +66,7 @@ class RegionsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_region
-      @region = Region.find(params[:id])
+      @region = Region.where(permalink: params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

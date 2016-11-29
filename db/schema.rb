@@ -10,12 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161127173725) do
+ActiveRecord::Schema.define(version: 20161129035813) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "permalink"
+    t.index ["permalink"], name: "index_categories_on_permalink"
   end
 
   create_table "events", force: :cascade do |t|
@@ -37,7 +39,9 @@ ActiveRecord::Schema.define(version: 20161127173725) do
     t.text     "location_details"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+    t.string   "permalink"
     t.index ["category_id"], name: "index_events_on_category_id"
+    t.index ["permalink"], name: "index_events_on_permalink"
     t.index ["region_id"], name: "index_events_on_region_id"
     t.index ["topic_id"], name: "index_events_on_topic_id"
   end
@@ -46,12 +50,16 @@ ActiveRecord::Schema.define(version: 20161127173725) do
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "permalink"
+    t.index ["permalink"], name: "index_regions_on_permalink"
   end
 
   create_table "topics", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "permalink"
+    t.index ["permalink"], name: "index_topics_on_permalink"
   end
 
 end

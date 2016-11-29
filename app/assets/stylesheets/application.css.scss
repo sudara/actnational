@@ -14,12 +14,40 @@
  *= require_self
  */
 
+main{
+  margin:auto;
+  width:980px;
+}
+
 table{
   width:900px;
   text-align:left;
 }
 
 #map{
-  width:900px;
+  width:980px;
   height:400px;
+}
+
+nav{
+  ul{
+    clear:both;
+    position:relative;
+    list-style-type: none;
+    overflow: hidden;
+    background-color: #333;
+    li{
+      float:left;
+      a{
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        &:hover:not(.active){
+          background-color: #111;
+        }
+      }
+    }
+  }
 }
