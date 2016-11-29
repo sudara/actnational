@@ -1,0 +1,8 @@
+<nav>
+  <ul>
+    <li><%= link_to 'All', events_path %></li>
+    <% @regions.each do |region| %>
+    <li><%= link_to region.name, region %></li>
+    <% end %>
+  </ul>
+</nav>
