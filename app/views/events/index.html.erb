@@ -1,5 +1,5 @@
+<%= render 'map' %>
 <p id="notice"><%= notice %></p>
-
 <% @regions.each do |region| %>
   <h2>Events in <%= region.name %></h2>
   <table>
@@ -13,7 +13,7 @@
       </tr>
     </thead>
     <tbody>
-      <% region.events.each do |event| %>
+      <% region.future_events.each do |event| %>
       <tr>
         <td><%= event.start.to_formatted_s(:long) %></td>
         <td><%= link_to event.name, event %>
