@@ -1,5 +1,5 @@
 class RegionsController < ApplicationController
-  before_action :set_region, only: [:show, :edit, :update, :destroy]
+  before_action :set_region, only: [:edit, :update, :destroy]
 
   # GET /regions
   # GET /regions.json
@@ -10,8 +10,9 @@ class RegionsController < ApplicationController
   # GET /regions/1
   # GET /regions/1.json
   def show
-    @events = @region.for_event_list
+    @region = Region.where(permalink: params[:id]).for_event_list
     @regions = Region.all
+    set_all_events_for_map
   end
 
   # GET /regions/new

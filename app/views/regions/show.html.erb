@@ -1,4 +1,4 @@
-<%= render 'events/map' %>
+<%= render 'events/map', locals: {events: @events} %>
 <p id="notice"><%= notice %></p>
 <%= render 'regions/nav' %>
 <%= render @region %>

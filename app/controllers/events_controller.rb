@@ -5,6 +5,7 @@ class EventsController < ApplicationController
   # GET /events.json
   def index
     @regions = Region.all.for_event_list
+    set_all_events_for_map
   end
 
   # GET /events/1
