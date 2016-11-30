@@ -19,6 +19,7 @@ gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'has_permalink'
+gem "recaptcha", require: "recaptcha/rails"
 
 group :production do
   gem 'pg'
@@ -28,6 +29,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
   gem 'pg'
+  gem 'dotenv'
 end
 
 group :development do
