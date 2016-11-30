@@ -1,5 +1,8 @@
 <p id="notice"><%= notice %></p>
 
+<%= image_tag "http://maps.googleapis.com/maps/api/staticmap?center=#{@event.latitude},#{@event.longitude}&markers=#{@event.latitude},#{@event.longitude}&zoom=7&size=640x400&key=AIzaSyB8c_WNUuU6gusK-TV4asDjmLoZuVhq_ww",
+              class: 'small-map', alt: "#{@event.city}"%>
+
 <p>
   <strong>Name:</strong>
   <%= @event.name %>
