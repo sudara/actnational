@@ -12,61 +12,45 @@
           disableDefaultUI: true,
           panControl: false,
           streetViewControl: false,
-          styles: [
-            {
+            styles: [
+              {
               "elementType": "geometry.stroke",
               "stylers": [
-                {
-                  "visibility": "off"
-                }
-              ]
-            },
-            {
-              "elementType": "labels",
-              "stylers": [
-                {
-                  "visibility": "off"
-                }
-              ]
-            },
-            {
-              "featureType": "landscape",
-              "stylers": [
-                {
-                  "saturation": -100
-                }
-              ]
-            },
-            {
-              "featureType": "landscape",
-              "elementType": "geometry",
-              "stylers": [
-                {
-                  "saturation": -100
-                }
-              ]
-            },
-            {
-              "featureType": "water",
-              "stylers": [
-                {
-                  "color": "#111111"
-                },
-                {
-                  "lightness": -100
-                }
-              ]
-            },
-            {
-              "featureType": "water",
-              "elementType": "geometry",
-              "stylers": [
-                {
-                  "saturation": 100
-                }
-              ]
-            }
-          ]
+              {
+                    "visibility": "off"
+                  }
+                ]
+              },
+              {
+                "elementType": "labels",
+                "stylers": [
+                  {
+                    "visibility": "off"
+                  }
+                ]
+              },
+              {
+                "featureType": "landscape",
+                "elementType": "geometry",
+                "stylers": [
+                  {
+                    "saturation": -65
+                  }
+                ]
+              },
+              {
+                "featureType": "water",
+                "elementType": "geometry",
+                "stylers": [
+                  {
+                    "saturation": -35
+                  },
+                  {
+                    "lightness": -5
+                  }
+                ]
+              }
+            ]
         });
 
         // Create an array of alphabetical characters used to label the markers.
