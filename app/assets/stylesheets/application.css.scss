@@ -22,11 +22,27 @@ main{
 table{
   width:900px;
   text-align:left;
+  border-collapse: collapse;
+  td{
+    padding:5px 10px;
+    vertical-align:top;
+  }
+  tbody{
+    tr{
+      &:nth-child(odd){
+        background-color: #eee;
+      }
+    }
+  }
 }
 
 #map{
   width:980px;
   height:400px;
+}
+
+h1{
+  color:green;
 }
 
 nav{
@@ -45,7 +61,7 @@ nav{
         padding: 14px 16px;
         text-decoration: none;
         &:hover:not(.active){
-          background-color: #111;
+          background-color: green;
         }
       }
     }
