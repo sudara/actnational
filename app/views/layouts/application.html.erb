@@ -9,7 +9,11 @@
 
   <body>
     <main>
+      <div class="add_event">
+        <%= link_to '+ Add A New Event', new_event_path %>
+      </div>
       <h1>Act National</h1>
+      
       <%= yield %>
     </main>
   </body>

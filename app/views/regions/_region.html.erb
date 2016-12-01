@@ -12,7 +12,7 @@
     <% region.future_events.each do |event| %>
     <tr>
       <td><%= event.start.to_formatted_s(:friendly) %></td>
-      <td><%= link_to event.name, event %> (<%= event.city %>, <%= event.state %>)<br/>
+      <td class="name"><%= link_to event.name, event %> (<%= event.city %>, <%= event.state %>)<br/>
         <%= event.description.truncate_words(20) %>
       </td>
       <td><%= event.category.name %></td>

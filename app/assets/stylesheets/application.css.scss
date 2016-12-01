@@ -46,12 +46,16 @@ h1{
 }
 
 nav{
+  &.regions{
+   margin-top:-45px; 
+  }
   ul{
     clear:both;
     position:relative;
     list-style-type: none;
     overflow: hidden;
-    background-color: #333;
+    background-color: #111;
+    margin:0;
     li{
       float:left;
       a{
@@ -63,7 +67,22 @@ nav{
         &:hover:not(.active){
           background-color: green;
         }
+        &:visited{
+          color:white;
+        }
       }
     }
   }
+}
+
+a:visited{
+  color:rgb(0, 0, 238);
+}
+
+.add_event{
+  display:block;
+  height:45px;
+  line-height:45px;
+  float:right;
+  font-weight:bold;
 }
