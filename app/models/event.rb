@@ -19,7 +19,7 @@ class Event < ApplicationRecord
   end
   
   def full_street_address
-    "#{city}, #{state}, USA"
+    "#{address}, #{city}, #{state}, USA"
   end
   
 end
