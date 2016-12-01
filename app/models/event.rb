@@ -11,11 +11,11 @@ class Event < ApplicationRecord
   after_validation :geocode          # auto-fetch coordinates
   
   def self.upcoming
-    where('start > ?', Date.yesterday.to_datetime)
+    where('start > ?', Date.yesterday.to_datetime).order(:start)
   end
   
   def self.past
-    where('start < ?', Date.yesterday.to_datetime)
+    where('start < ?', Date.yesterday.to_datetime).order(:start)
   end
   
   def full_street_address

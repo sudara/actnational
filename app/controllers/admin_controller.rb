@@ -3,6 +3,10 @@ class AdminController < ApplicationController
   layout 'admin'
   
   def index
-    @events = Event.all
+    if params[:past]
+      @events = Event.past
+    else
+      @events = Event.upcoming
+    end
   end
 end

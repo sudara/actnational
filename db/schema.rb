@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161130024120) do
+ActiveRecord::Schema.define(version: 20161201210248) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 20161130024120) do
     t.index ["category_id"], name: "index_events_on_category_id"
     t.index ["permalink"], name: "index_events_on_permalink"
     t.index ["region_id"], name: "index_events_on_region_id"
+    t.index ["start"], name: "index_events_on_start"
     t.index ["topic_id"], name: "index_events_on_topic_id"
   end
 
