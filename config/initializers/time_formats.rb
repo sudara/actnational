@@ -1,0 +1,1 @@
+Time::DATE_FORMATS[:friendly] = "%B %e, %Y %l:%M %p"
