@@ -2,11 +2,7 @@
 
 <%= image_tag "http://maps.googleapis.com/maps/api/staticmap?center=#{@event.latitude},#{@event.longitude}&markers=#{@event.latitude},#{@event.longitude}&zoom=7&size=640x400&key=AIzaSyB8c_WNUuU6gusK-TV4asDjmLoZuVhq_ww",
               class: 'small-map', alt: "#{@event.city}"%>
-
-<p>
-  <strong>Name:</strong>
-  <%= @event.name %>
-</p>
+<h1><%= @event.name %></h1>
 
 <p>
   <strong>Description:</strong>
@@ -15,17 +11,17 @@
 
 <p>
   <strong>Category:</strong>
-  <%= @event.category %>
+  <%= @event.category.name %>
 </p>
 
 <p>
   <strong>Region:</strong>
-  <%= @event.region %>
+  <%= @event.region.name %>
 </p>
 
 <p>
   <strong>Topic:</strong>
-  <%= @event.topic %>
+  <%= @event.topic.name %>
 </p>
 
 <p>

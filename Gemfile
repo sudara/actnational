@@ -21,6 +21,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'has_permalink'
 gem "recaptcha", require: "recaptcha/rails"
 gem "geocoder"
+gem "awesome_print"
 
 group :production do
   gem 'pg'

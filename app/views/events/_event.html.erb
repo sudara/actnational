@@ -1,0 +1,11 @@
+<tr>
+  <td><%= event.start.to_formatted_s(:friendly) %></td>
+  <td><%= link_to event.name, event %> (<%= event.city %>, <%= event.state %>)<br/>
+    <%= event.description.truncate_words(20) %>
+  </td>
+  <td><%= event.region.try(:name) %></td>
+  <td><%= event.category.name %></td>
+  <td><%= event.topic.name %></td>
+  <td><%= link_to 'Edit', edit_event_path(event) %></td>
+  <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+</tr>

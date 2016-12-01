@@ -1,6 +1,8 @@
 class CategoriesController < ApplicationController
   before_action :set_category, only: [:show, :edit, :update, :destroy]
-
+  before_action :restrict_access
+  layout 'admin'
+  
   # GET /categories
   # GET /categories.json
   def index

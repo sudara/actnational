@@ -1,6 +1,8 @@
 class RegionsController < ApplicationController
   before_action :set_region, only: [:edit, :update, :destroy]
-
+  before_action :restrict_access
+  layout 'admin'
+  
   # GET /regions
   # GET /regions.json
   def index
@@ -10,9 +12,10 @@ class RegionsController < ApplicationController
   # GET /regions/1
   # GET /regions/1.json
   def show
-    @region = Region.where(permalink: params[:id]).for_event_list
+    @region = Region.where(permalink: params[:id]).for_event_list.first
     @regions = Region.all
     set_all_events_for_map
+    @page_title = @region.name + " Region"
   end
 
   # GET /regions/new
@@ -67,7 +70,7 @@ class RegionsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_region
-      @region = Region.where(permalink: params[:id])
+      @region = Region.where(permalink: params[:id]).first
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
