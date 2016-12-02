@@ -17,7 +17,10 @@ Just do this for now.
 
 ## Seed data
 
-`rails db:seed`
+This will create the database and some initial data:
+
+`bin/rails db:setup`
+
 
 
 ## Start the server
