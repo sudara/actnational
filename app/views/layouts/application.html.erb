@@ -12,9 +12,12 @@
       <div class="add_event">
         <%= link_to '+ Add A New Event', new_event_path %>
       </div>
-      <h1>Act National</h1>
+      <h1><%= link_to 'Act National','/' %></h1>
       
       <%= yield %>
     </main>
+    <footer>
+      2016 Act National.
+    </footer>
   </body>
 </html>

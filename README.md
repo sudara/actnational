@@ -1,24 +1,19 @@
-# README
+# Act National
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Local setup just uses sqlite.
 
-Things you may want to cover:
 
-* Ruby version
+## bundle
 
-* System dependencies
+`bundle install`
 
-* Configuration
+## Setup .env
 
-* Database creation
+You'll need a `.env` file to stick secrets in. Do this:
 
-* Database initialization
+`cp .sample.env .env`
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+## Seed data
 
-* Deployment instructions
-
-* ...
+`rails db:seed`

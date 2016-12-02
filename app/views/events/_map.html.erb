@@ -76,9 +76,12 @@
               }); 
             };
           })(marker,content,infowindow));  
-          google.maps.event.addDomListener(marker, 'click', function() {
-            window.location.href = marker.url;
-          });
+          
+          google.maps.event.addDomListener(marker, 'click', (function(marker,content,infowindow){ 
+            return function(){
+              window.location.href = marker.url;
+            }
+          })(marker,content,infowindow)); 
           return marker;
         });
 
