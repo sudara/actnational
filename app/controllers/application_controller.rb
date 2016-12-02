@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   protected
   
   def set_all_events_for_map
-    @all_events = Event.upcoming
+    @all_events = Event.upcoming.where('latitude is not ?',nil)
   end
   
 

@@ -1,6 +1,6 @@
 class RegionsController < ApplicationController
   before_action :set_region, only: [:edit, :update, :destroy]
-  before_action :restrict_access
+  before_action :restrict_access, except: :show
   layout 'admin'
   
   # GET /regions

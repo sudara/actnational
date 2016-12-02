@@ -12,7 +12,6 @@
           disableDefaultUI: true,
           panControl: false,
           streetViewControl: false,
-          clickableIcons: false,
             styles: [
               {
               "elementType": "geometry.stroke",
@@ -54,29 +53,38 @@
             ]
         });
 
-        // Create an array of alphabetical characters used to label the markers.
-        var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-
         // Add some markers to the map.
         // Note: The code uses the JavaScript Array.prototype.map() method to
         // create an array of markers based on a given "locations" array.
         // The map() method here has nothing to do with the Google Maps API.
-        var markers = locations.map(function(location, i) {
-          return new google.maps.Marker({
-            position: location,
-            label: labels[i % labels.length]
+        var markers = locations.map(function(event) {
+          marker = new google.maps.Marker({
+            position: {lat: event.latitude, lng: event.longitude},
+            clickable: true,
+            url: '/events/' + event.permalink,
+            map: map
           });
+          infowindow = new google.maps.InfoWindow({
+          });
+          content = '<b>' + event.city + ', ' + event.state + '</b><br/>' + event.name
+          google.maps.event.addDomListener(marker, 'mouseover', (function(marker,content,infowindow){ 
+            return function() {
+              infowindow.setContent(content);
+              infowindow.open(map,marker);
+              google.maps.event.addListener(marker,'mouseout', function(){ 
+                infowindow.close();
+              }); 
+            };
+          })(marker,content,infowindow));  
+          google.maps.event.addDomListener(marker, 'click', function() {
+            window.location.href = marker.url;
+          });
+          return marker;
         });
 
-        // Add a marker clusterer to manage the markers.
-        var markerCluster = new MarkerClusterer(map, markers,
-            {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
       }
-      var locations = [
-        <%= raw locations_from(@all_events).join %>
-      ]
-    </script>
-    <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
+      var locations = <%= raw @all_events.to_json(only: [:latitude,:longitude,:name,:permalink,:city,:state]) %>
+    
     </script>
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB8c_WNUuU6gusK-TV4asDjmLoZuVhq_ww&callback=initMap">
