@@ -16,6 +16,7 @@ class RegionsController < ApplicationController
     @regions = Region.all
     set_all_events_for_map
     @page_title = @region.name + " Region"
+    render layout: 'application'
   end
 
   # GET /regions/new
