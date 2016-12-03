@@ -22,6 +22,7 @@ gem 'has_permalink'
 gem "recaptcha", require: "recaptcha/rails"
 gem "geocoder"
 gem "awesome_print"
+gem "redcarpet"
 
 group :production do
   gem 'pg'
