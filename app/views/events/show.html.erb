@@ -1,64 +1,61 @@
+<%= render "map" %>
+<%= render "regions/nav" %>
 <p id="notice"><%= notice %></p>
+                
+<h2><%= @event.name %></h2>
 
-<%= image_tag "http://maps.googleapis.com/maps/api/staticmap?center=#{@event.latitude},#{@event.longitude}&markers=#{@event.latitude},#{@event.longitude}&zoom=11&size=640x400&key=AIzaSyB8c_WNUuU6gusK-TV4asDjmLoZuVhq_ww",
+<div class="sidebar">
+<%= image_tag "http://maps.googleapis.com/maps/api/staticmap?center=#{@event.latitude},#{@event.longitude}&markers=#{@event.latitude},#{@event.longitude}&zoom=11&size=400x400&key=AIzaSyB8c_WNUuU6gusK-TV4asDjmLoZuVhq_ww",
               class: 'small-map', alt: "#{@event.city}"%>
-<h1><%= @event.name %></h1>
+</div>
+<div>
+  <p>
+    <strong>Description:</strong>
+    <%= markdown(@event.description) %>
+  </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= markdown(@event.description) %>
-</p>
+  <p>
+    <strong>Category:</strong>
+    <%= @event.category.name %>
+  </p>
 
-<p>
-  <strong>Category:</strong>
-  <%= @event.category.name %>
-</p>
+  <p>
+    <strong>Topic:</strong>
+    <%= @event.topic.name %>
+  </p>
 
-<p>
-  <strong>Topic:</strong>
-  <%= @event.topic.name %>
-</p>
+  <p>
+    <strong>Start:</strong>
+    <%= @event.start.to_formatted_s(:friendly) %>
+  </p>
 
-<p>
-  <strong>Start:</strong>
-  <%= @event.start %>
-</p>
+  <p>
+    <strong>End:</strong>
+    <%= @event.end %>
+  </p>
 
-<p>
-  <strong>End:</strong>
-  <%= @event.end %>
-</p>
+  <p>
+    <strong>Organizer by:</strong><br/>
+    <%= @event.organizer %><br/>
+    <%= @event.contact_email %>
+    <%= @event.contact_phone %>
+  </p>
 
-<p>
-  <strong>Organizer:</strong>
-  <%= @event.organizer %>
-</p>
+  <p>
+    <strong>Website:</strong>
+    <%= url_with_protocol @event.website %>
+  </p>
 
-<p>
-  <strong>Contact email:</strong>
-  <%= @event.contact_email %>
-</p>
+  <p>
+    <strong>Address:</strong><br/>
+    <%= @event.address %><br/>
+    <%= @event.city %>, <%= @event.state %>, <%= @event.zip %>
+  </p>
 
-<p>
-  <strong>Contact phone:</strong>
-  <%= @event.contact_phone %>
-</p>
-
-<p>
-  <strong>Website:</strong>
-  <%= @event.website %>
-</p>
-
-<p>
-  <strong>Address:</strong><br/>
-  <%= @event.address %><br/>
-  <%= @event.city %>, <%= @event.state %>, <%= @event.zip %>
-</p>
-
-<p>
-  <strong>Location details:</strong>
-  <%= @event.location_details %>
-</p>
-
+  <p>
+    <strong>Location details:</strong>
+    <%= @event.location_details %>
+  </p>
+</div>
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>

@@ -11,6 +11,9 @@ class EventsController < ApplicationController
   # GET /events/1
   # GET /events/1.json
   def show
+    set_all_events_for_map
+    @regions = Region.all.for_event_list
+    @region = @event.region
   end
 
   # GET /events/new
