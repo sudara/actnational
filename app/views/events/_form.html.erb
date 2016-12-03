@@ -38,12 +38,12 @@
 
   <div class="field">
     <%= f.label :start %>
-    <%= f.datetime_select :start %>
+    <%= f.datetime_select :start, {:minute_step => 15, :ampm => true} %>
   </div>
 
   <div class="field">
     <%= f.label :end %>
-    <%= f.datetime_select :end %>
+    <%= f.datetime_select :end, {:minute_step => 15, :ampm => true} %>
   </div>
 
   <div class="field">
