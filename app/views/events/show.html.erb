@@ -31,11 +31,11 @@
 
   <p>
     <strong>End:</strong>
-    <%= @event.end %>
+    <%= @event.end.to_formatted_s(:friendly) if @event.end %>
   </p>
 
   <p>
-    <strong>Organizer by:</strong><br/>
+    <strong>Organized by:</strong><br/>
     <%= @event.organizer %><br/>
     <%= @event.contact_email %>
     <%= @event.contact_phone %>
@@ -43,7 +43,7 @@
 
   <p>
     <strong>Website:</strong>
-    <%= url_with_protocol @event.website %>
+    <%= link_to url_with_protocol(@event.website) if @event.website.present? %>
   </p>
 
   <p>
