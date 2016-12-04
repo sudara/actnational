@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161201210248) do
+ActiveRecord::Schema.define(version: 20161204213218) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -37,11 +37,13 @@ ActiveRecord::Schema.define(version: 20161201210248) do
     t.string   "state"
     t.string   "zip"
     t.text     "location_details"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
     t.string   "permalink"
     t.float    "latitude"
     t.float    "longitude"
+    t.string   "created_by_session_id"
+    t.string   "created_by_ip"
     t.index ["category_id"], name: "index_events_on_category_id"
     t.index ["permalink"], name: "index_events_on_permalink"
     t.index ["region_id"], name: "index_events_on_region_id"

@@ -1,6 +1,7 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
-  before_action :restrict_access, except: [:show, :new, :create]  
+  before_action :restrict_access, only: :destroy 
+  before_action :restrict_access_unless_creator, only: [:update, :edit]
   
   # GET /events
   # GET /events.json
@@ -33,7 +34,7 @@ class EventsController < ApplicationController
 
     respond_to do |format|
       if verify_recaptcha(model: @event) && @event.save
-        format.html { redirect_to @event, notice: 'Event was successfully created.' }
+        format.html { redirect_to @event, notice: "Event was successfully created. Feel free to <a href='/events/#{@event.permalink}/edit'>edit it</a>.".html_safe }
         format.json { render :show, status: :created, location: @event }
       else
         format.html { render :new }
@@ -74,6 +75,13 @@ class EventsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
-      params.require(:event).permit(:name, :description, :category_id, :region_id, :topic_id, :start, :end, :organizer, :contact_email, :contact_phone, :website, :address, :city, :state, :zip, :location_details)
+      params.require(:event).permit(:name, :description, :category_id, 
+        :region_id, :topic_id, :start, :end, :organizer, :contact_email, 
+        :contact_phone, :website, :address, :city, :state, 
+        :zip, :location_details).merge(created_by_ip: request.remote_ip, created_by_session_id: session.id)
+    end
+    
+    def restrict_access_unless_creator
+      restrict_access unless @event.created_by_session_id == session.id
     end
 end

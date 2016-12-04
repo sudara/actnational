@@ -1,6 +1,6 @@
 <%= render "map" %>
 <%= render "regions/nav" %>
-<p id="notice"><%= notice %></p>
+<p id="notice"><%= notice.html_safe if notice %></p>
                 
 <h2><%= @event.name %></h2>
 

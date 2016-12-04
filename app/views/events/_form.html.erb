@@ -13,7 +13,7 @@
   
   <div class="field">
     <%= f.label "Which Region is this event in?"%>
-    <%= f.select(:region_id, Region.all.collect {|r| [ r.name, r.id ] }) %>
+    <%= f.select(:region_id, Region.all.collect {|r| [ r.name, r.id ] }, :prompt => "Pick a region...") %>
   </div>
   
   <div class="field">
@@ -23,12 +23,12 @@
   
   <div class="field">
     <%= f.label 'What type of event is this?' %>
-    <%= f.select(:category_id, Category.all.collect {|c| [ c.name, c.id ] }) %>
+    <%= f.select(:category_id, Category.all.collect {|c| [ c.name, c.id ] }, :prompt => "Pick a type...") %>
   </div>
 
   <div class="field">
     <%= f.label 'What is the subject of the event?' %>
-    <%= f.select(:topic_id, Topic.all.collect {|t| [ t.name, t.id ] }) %>
+    <%= f.select(:topic_id, Topic.all.collect {|t| [ t.name, t.id ] },:prompt => "Pick the primary topic...") %>
   </div>
 
   <div class="field">
@@ -78,7 +78,7 @@
 
   <div class="field">
     <%= f.label :state %>
-    <%= f.select :state, options_for_select(us_states) %>
+    <%= f.select :state, options_for_select(us_states), :prompt => "Select State..." %>
   </div>
 
   <div class="field">

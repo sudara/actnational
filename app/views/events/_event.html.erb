@@ -6,6 +6,8 @@
   <td><%= event.region.try(:name) %></td>
   <td><%= event.category.name %></td>
   <td><%= event.topic.name %></td>
+  <td><%= event.ip %></td>
+  <td><%= event.created_by_session_id %></td>
   <td><%= link_to 'Edit', edit_event_path(event) %></td>
   <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
 </tr>
