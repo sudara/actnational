@@ -14,10 +14,21 @@
  *= require_self
  */
 
-main{
+main,footer{
   margin:auto;
   width:980px;
 }
+
+footer{
+  margin-top:4em;
+  margin-bottom:2em;
+}
+main{
+  .sidebar{
+    float:right;
+  }
+}
+
 
 table{
   width:900px;
@@ -80,12 +91,6 @@ nav{
         }
       }
     }
-  }
-}
-
-main{
-  .sidebar{
-    float:right;
   }
 }
 
