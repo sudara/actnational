@@ -1,23 +1,21 @@
 <h2>Events in <%= region.name %></h2>
-<table>
-  <thead>
-    <tr>
-      <th>Date</th>
-      <th>Name</th>
-      <th>Event Type</th>
-      <th>Topic</th>
-    </tr>
-  </thead>
-  <tbody>
+<div class="region">
+  <div class="table_header">
+    <div>Date</div>
+    <div>Name</div>
+    <div>Event Type</div>
+    <div>Topic</div>
+  </div>
+  <ul class="event">
     <% region.future_events.each do |event| %>
-    <tr>
-      <td><%= event.start.to_formatted_s(:friendly) %></td>
-      <td class="name"><%= link_to event.name, event %> (<%= event.city %>, <%= event.state %>)<br/>
+    <li>
+      <div class="date"><%= event.start.to_formatted_s(:friendly) %></div>
+      <div class="name"><%= link_to event.name, event %> (<%= event.city %>, <%= event.state %>)<br/>
         <%= event.description.truncate_words(20) %>
-      </td>
-      <td><%= event.category.name %></td>
-      <td><%= event.topic.name %></td>
-    </tr>
+      </div>
+      <div class="category"><%= event.category.name %></div>
+      <div class="topic"><%= event.topic.name %></div>
+    </li>
     <% end %>
-  </tbody>
-</table>
+  </ul>
+</div>
