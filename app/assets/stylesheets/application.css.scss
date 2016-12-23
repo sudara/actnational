@@ -49,6 +49,62 @@ table{
   }
 }
 
+// Replacement for Table
+div.table_header {
+  overflow: auto;
+  background-color: #EEE;
+  div {
+    font-weight: bold;
+    float: left;
+    box-sizing: border-box;
+    padding: 10px;
+    &:nth-child(1) {
+      width: 160px;
+    }
+    &:nth-child(2) {
+      width: 490px;
+    }
+    &:nth-child(3) {
+      width: 180px;
+    }
+    &:nth-child(4) {
+      width: 150px;
+    }
+  }
+}
+
+ul.event {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  border-right: 1px solid #EEE;
+  border-left: 1px solid #EEE;
+  li {
+    overflow: auto;
+    box-sizing: border-box;
+    border-bottom: 1px solid #EEE;
+    div {
+      float: left;
+      box-sizing: border-box;
+      padding: 10px;
+      &.date {
+        width: 159px;
+      }
+      &.name {
+        width: 490px;
+      }
+      &.category {
+        width: 180px;
+      }
+      &.topic {
+        width: 149px;
+      }
+    }
+  }
+}
+
+
 #map{
   width:980px;
   height:400px;
