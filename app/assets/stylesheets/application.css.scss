@@ -172,3 +172,41 @@ a,a:visited{
     height:200px;
   }
 }
+
+
+// Responsive overwrites for widths less than 600px
+@media only screen and (max-width: 600px) {
+
+    main, footer {
+        margin: auto;
+        width: 100%;
+    }
+
+    #map {
+        width: 100%;
+        height: 400px
+    }
+
+    nav ul {
+        list-style-type: none;
+        padding-left: 0;
+    }
+
+    nav ul li {
+        float: none;
+    }
+    
+    h2 {
+    	padding-left: 10px;
+    	padding-right: 10px;
+    }
+
+    div.table_header { 
+    	display: none;
+    }
+    
+    .region ul.event li div {
+    	float: none;
+    	width: 100%;
+    }
+}
