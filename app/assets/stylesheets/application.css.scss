@@ -209,6 +209,11 @@ a,a:visited{
       h1 {
        font-size: 1.2em;
       }
+      .mobile_menu_toggle {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+      }
     }
 
 
@@ -218,7 +223,9 @@ a,a:visited{
     }
   
   nav.regions {
-    margin-top: 50px;
+    margin-top: 0px;
+    position: fixed;
+    top: 0;
   }
 
     nav ul {
