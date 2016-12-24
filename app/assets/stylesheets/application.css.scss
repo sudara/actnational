@@ -204,6 +204,7 @@ a,a:visited{
       position: fixed;
       top: 0;
       height: 50px;
+      width: 100%;
       background-color: #FFF;
       h1 {
        font-size: 1.2em;
@@ -216,7 +217,7 @@ a,a:visited{
         height: 200px
     }
   
-  nav {
+  nav.regions {
     margin-top: 50px;
   }
 
