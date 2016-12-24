@@ -209,4 +209,14 @@ a,a:visited{
     	float: none;
     	width: 100%;
     }
+  
+    // Add Event page
+    .field {
+      input[type="text"]{
+        width:100%;
+     }
+     textarea{
+        width:100%;
+        height:200px;
+     }
 }
