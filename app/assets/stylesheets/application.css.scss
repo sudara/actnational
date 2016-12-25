@@ -183,8 +183,8 @@ a,a:visited{
 @media only screen and (max-width: 600px) {
 
   main, footer {
-      margin: auto;
-      width: 100%;
+    margin: auto;
+    width: 100%;
   }
   
   main {
@@ -199,28 +199,27 @@ a,a:visited{
       display:none;
     }
   }
-
+  
   .mobile_fixed_header {
-      display: block;
-      position: fixed;
-      top: 0;
-      height: 50px;
-      width: 100%;
-      background-color: #FFF;
-      h1 {
-       font-size: 1.2em;
-       margin-left: 10px;
-      }
-      .mobile_menu_toggle {
-        position: absolute;
-        top: 0px;
-        right: 0px;
-      }
-      box-shadow: 0 10px 12px -12px rgba(0, 0, 0, 0.5);
-      -webkit-box-shadow: 0 10px 12px -12px rgba(0, 0, 0, 0.5);
-      -moz-box-shadow: 0 10px 12px -12px rgba(0, 0, 0, 0.5);
-    
+    display: block;
+    position: fixed;
+    top: 0;
+    height: 50px;
+    width: 100%;
+    background-color: #FFF;
+    h1 {
+     font-size: 1.2em;
+     margin-left: 10px;
     }
+    .mobile_menu_toggle {
+      position: absolute;
+      top: 0px;
+      right: 10px;
+    }
+    box-shadow: 0 10px 12px -12px rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 0 10px 12px -12px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0 10px 12px -12px rgba(0, 0, 0, 0.5);
+  }
   
   nav.regions {
     margin-top: 0px;
@@ -231,49 +230,49 @@ a,a:visited{
     display: none; // Hide regions nav to start, toggled by burger
   }
 
-    nav ul {
-        list-style-type: none;
-        padding-left: 0;
-    }
+  nav ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
 
-    nav ul li {
-        float: none;
-    }
+  nav ul li {
+    float: none;
+  }
   
-   nav ul li a {
-     padding-top: 5px;
-     padding-bottom: 5px;
-   }
+  nav ul li a {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
     
-    h2 {
-    	padding-left: 10px;
-    	padding-right: 10px;
-    }
+  h2 {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 
-    div.table_header { 
-    	display: none;
-    }
+  div.table_header { 
+    display: none;
+  }
     
-    .region ul.event li div {
-    	float: none;
-    	width: 100%;
-    }
+  .region ul.event li div {
+    float: none;
+    width: 100%;
+  }
   
-    // Add Event page
-    form {
-      padding-left: 3%;
-      padding-right: 3%;
-   }
+  // Add Event page
+  form {
+    padding-left: 3%;
+    padding-right: 3%;
+  }
   
-    .field {
-      input[type="text"]{
-        width:100%;
-        box-sizing: border-box;
-       }
-       textarea{
-          width:100%;
-          height:200px;
-          box-sizing: border-box;
-       }
+  .field {
+    input[type="text"]{
+      width:100%;
+      box-sizing: border-box;
     }
+    textarea {
+      width:100%;
+      height:200px;
+      box-sizing: border-box;
+    }
+  }
 }
