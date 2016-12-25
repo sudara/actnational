@@ -188,6 +188,7 @@ a,a:visited{
   }
   
   main {
+    padding-top: 50px;
     div.add_event {
       display:none;
     }
@@ -228,6 +229,7 @@ a,a:visited{
     top: 0;
     top: 50px;
     width: 100%;
+    display: none; // Hide regions nav to start, toggled by burger
   }
 
     nav ul {
