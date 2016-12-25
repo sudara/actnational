@@ -137,6 +137,9 @@ nav{
     background-color: #111;
     margin:0;
     li{
+      &.add_event_mobile_only {
+        display: none;
+      }
       float:left;
       a{
         display: block;
@@ -244,6 +247,10 @@ a,a:visited{
   nav ul li {
     float: none;
     border-bottom: 1px solid #ccc;
+  }
+  
+  nav ul li.add_event_mobile_only {
+    display: block;
   }
   
   nav ul li a {
