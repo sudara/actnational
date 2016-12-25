@@ -16,7 +16,7 @@
 //= require_tree .
 
 $(document).ready( function() {
-  $(".mobile_menu_toggle").click( function() {
+  $(document).on('click', '.mobile_menu_toggle', function {
     $("nav.regions").toggle();
-  });
+  })
 });
