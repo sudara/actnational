@@ -187,6 +187,12 @@ a,a:visited{
     width: 100%;
   }
   
+  footer {
+    box-sizing: border-box;
+    padding: 10px;
+    font-size: 0.8em;
+  }
+  
   main {
     padding-top: 50px;
     div.add_event {
