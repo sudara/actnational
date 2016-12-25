@@ -17,7 +17,7 @@
 
 $(document).ready( function() {
   console.log("document ready fired.");
-  $(document).on('click', '.mobile_menu_toggle', function {
+  $(document).on('click', '.mobile_menu_toggle', function () {
     $("nav.regions").toggle();
     console.log(".mobile_menu_toggle clicked");
   })
