@@ -302,7 +302,7 @@ a,a:visited{
   form {
     padding-left: 3%;
     padding-right: 3%;
- padding-top: 20px;
+    padding-top: 20px;
   }
   
   .field {
@@ -315,5 +315,16 @@ a,a:visited{
       height:200px;
       box-sizing: border-box;
     }
+  }
+  body.show_event {
+	  #sidebar {
+		  img.small-map {
+			  width: 100%;
+		  }
+	  }
+	  main > div > p {
+		  padding-left: 10px;
+		  padding-left: 10px;
+	  }
   }
 }
