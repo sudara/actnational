@@ -5,19 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <script src="https://use.fontawesome.com/d0794a796b.js"></script>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
     <div class="mobile_fixed_header">
-      <h1><%= link_to 'ActNational.org','/' %></h1>
-      <a href="javascript:void(0)" class="mobile_menu_toggle">Menu</a>
+      <h1><%= link_to 'Act National','/' %></h1>
+      <a href="javascript:void(0)" class="mobile_menu_toggle"><i class="fa fa-bars fa-3x" aria-hidden="true"></i></a>
     </div>
     <main>
       <div class="add_event">
         <%= link_to '+ Add A New Event', new_event_path %>
       </div>
-      <h1><%= link_to 'ActNational.org','/' %></h1>
+      <h1><%= link_to '/' do %>
+        ActNational
+      <% end %>
+      </h1>
       
       <%= yield %>
     </main>

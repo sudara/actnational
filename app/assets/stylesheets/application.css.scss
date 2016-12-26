@@ -120,6 +120,13 @@ h1{
   a{
     text-decoration:none;
   }
+  @font-face {
+  	font-family: 'Modern Sans';
+  	src: asset-url('ModernSans.woff2') format('woff2'),
+  		asset-url('ModernSans.woff') format('woff');
+  	font-weight: normal;
+  	font-style: normal;
+  }
 }
 h2{
   margin-top:2em;
