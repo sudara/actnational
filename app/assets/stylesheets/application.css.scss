@@ -219,7 +219,7 @@ a,a:visited{
   }
   
   main {
-	  > a:last-child { // targets back link on Add Event form page
+	  > a { // targets back link on Add Event form page
 		  margin-left: 10px;
 	  }
     padding-top: 50px;
