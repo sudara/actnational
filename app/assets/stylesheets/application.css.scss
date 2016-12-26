@@ -324,7 +324,10 @@ a,a:visited{
 	  }
 	  main > div > p {
 		  padding-left: 10px;
-		  padding-left: 10px;
+		  padding-right: 10px;
+	  }
+	  main > a {
+		margin-left: 10px;
 	  }
   }
 }
