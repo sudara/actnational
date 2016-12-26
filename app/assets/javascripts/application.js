@@ -23,9 +23,19 @@
 
 $( document ).on('turbolinks:load', function() {
   console.log("It works on each visit!")
-    $(document).on('click', '.mobile_menu_toggle', function () {
-       console.log(".mobile_menu_toggle clicked.");
-        $("nav.regions").toggle();
-    })
+    
+    
+    function toggleNav() {
+   
+        if ( $("nav.regions").css("display") == "block" ) {
+            $("nav.regions").css("display", "none");
+        } else {
+        $("nav.regions").css("display", "block");
+        }
+    }
+    
+    $(document).off('click', '.mobile_menu_toggle', toggleNav });
+    $(document).on('click', '.mobile_menu_toggle', toggleNav });
+   
 
 })
