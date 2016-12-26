@@ -15,8 +15,8 @@
 //= require turbolinks
 //= require_tree .
 
-$(document).ready( function() {
+//$(document).ready( function() {
   $(document).on('click', '.mobile_menu_toggle', function () {
     $("nav.regions").toggle();
   })
-});
+//});
