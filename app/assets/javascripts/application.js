@@ -16,7 +16,15 @@
 //= require_tree .
 
 //$(document).ready( function() {
-  $(document).on('click', '.mobile_menu_toggle', function () {
+//  $(document).on('click', '.mobile_menu_toggle', function () {
     //$("nav.regions").toggle();
-  })
+ // })
 //});
+
+$( document ).on('turbolinks:load', function() {
+  console.log("It works on each visit!")
+    $(document).on('click', '.mobile_menu_toggle', function () {
+       $("nav.regions").toggle();
+    })
+
+})
