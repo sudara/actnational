@@ -34,8 +34,8 @@ $( document ).on('turbolinks:load', function() {
         }
     }
     
-    $(document).off('click', '.mobile_menu_toggle', toggleNav });
-    $(document).on('click', '.mobile_menu_toggle', toggleNav });
+    $(document).off('click', '.mobile_menu_toggle', toggleNav );
+    $(document).on('click', '.mobile_menu_toggle', toggleNav );
    
 
 })
