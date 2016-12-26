@@ -198,6 +198,12 @@ a,a:visited{
 // Responsive overwrites for widths less than 600px
 @media only screen and (max-width: 600px) {
 
+  html[data-turbolinks-preview] {
+	 nav.regions {
+		 display: none;
+	 }
+  }
+	
   main, footer {
     margin: auto;
     width: 100%;
