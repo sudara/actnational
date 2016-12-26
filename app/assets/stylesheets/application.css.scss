@@ -330,6 +330,12 @@ a,a:visited{
 		width: 100%;
 		box-sizing: border-box;
 	}
+
+	p#notice {
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+	
   body.show_event {
 	  #sidebar {
 		  img.small-map {
