@@ -200,7 +200,7 @@ a,a:visited{
 
   html[data-turbolinks-preview] {
 	 nav.regions {
-		 display: none;
+		 display: none!important;
 	 }
   }
 	
