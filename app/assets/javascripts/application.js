@@ -17,6 +17,6 @@
 
 //$(document).ready( function() {
   $(document).on('click', '.mobile_menu_toggle', function () {
-    $("nav.regions").toggle();
+    //$("nav.regions").toggle();
   })
 //});
