@@ -39,6 +39,8 @@ class EventsController < ApplicationController
         format.html { redirect_to @event, notice: "Event was successfully created. Feel free to <a href='/events/#{@event.permalink}/edit'>edit it</a>.".html_safe }
         format.json { render :show, status: :created, location: @event }
       else
+        set_all_events_for_map
+        @regions = Region.all
         format.html { render :new }
         format.json { render json: @event.errors, status: :unprocessable_entity }
       end
