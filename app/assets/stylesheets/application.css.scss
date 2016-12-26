@@ -166,6 +166,9 @@ nav{
         &:visited{
           color:white;
         }
+        &.current a{
+          background-color: green;
+        }
       }
     }
   }

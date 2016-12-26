@@ -4,7 +4,9 @@
     <li class="add_event_mobile_only"><a href="/events/new">Add Event</a></li>
     <li><%= link_to 'All', events_path %></li>
     <% @regions.each do |region| %>
-      <li><%= link_to region.name, region %></li>
+      <li class="<%= 'current' if region.id == @region.try(:id) %>">
+        <%= link_to region.name, region %>
+      </li>
     <% end %>
   </ul>
 </nav>
