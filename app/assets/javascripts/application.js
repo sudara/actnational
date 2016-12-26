@@ -21,20 +21,22 @@
  // })
 //});
 
-$( document ).on('turbolinks:load', function() {
-  console.log("It works on each visit!")
+// $( document ).on('turbolinks:load', function() {
+//   console.log("It works on each visit!")
     
     
     function toggleNav() {
    
         if ( $("nav.regions").css("display") == "block" ) {
             $("nav.regions").css("display", "none");
+            console.log("hide nav");
         } else {
-        $("nav.regions").css("display", "block");
+            $("nav.regions").css("display", "block");
+            console.log("show nav");
         }
     }
     
-    $(document).off('click', '.mobile_menu_toggle', toggleNav );
+//     $(document).off('click', '.mobile_menu_toggle', toggleNav );
     $(document).on('click', '.mobile_menu_toggle', toggleNav );
    
 
