@@ -326,6 +326,9 @@ a,a:visited{
 		  padding-left: 10px;
 		  padding-right: 10px;
 	  }
+	  main > div > * {
+		  word-wrap:break-word;
+	  }
 	  main > a {
 		margin-left: 10px;
 	  }
