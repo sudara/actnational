@@ -292,7 +292,12 @@ a,a:visited{
     float: none;
     width: 100%;
   }
-  
+
+.region ul.event li .date {
+    font-weight: bold;
+  }
+
+	
   // Add Event page
   form {
     padding-left: 3%;
