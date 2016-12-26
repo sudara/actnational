@@ -20,6 +20,8 @@ class EventsController < ApplicationController
 
   # GET /events/new
   def new
+    set_all_events_for_map
+    @regions = Region.all
     @event = Event.new
   end
 

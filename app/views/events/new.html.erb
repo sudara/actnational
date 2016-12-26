@@ -1,5 +1,6 @@
+<%= render 'events/map', locals: {events: @events} %>
+<%= render 'regions/nav' %>
 <h1>Submit Your Event</h1>
-
 <%= render 'form', event: @event %>
 
 <%= link_to 'Back', events_path %>
