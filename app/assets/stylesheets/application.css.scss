@@ -325,6 +325,11 @@ a,a:visited{
       box-sizing: border-box;
     }
   }
+	
+	#error_explanation {
+		width: 100%;
+		box-sizing: border-box;
+	}
   body.show_event {
 	  #sidebar {
 		  img.small-map {
