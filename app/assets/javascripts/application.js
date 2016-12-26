@@ -26,7 +26,7 @@
     
     
     function toggleNav() {
-   
+        console.log("toggleNav called.");
         if ( $("nav.regions").css("display") == "block" ) {
             $("nav.regions").css("display", "none");
             console.log("hide nav");
@@ -37,7 +37,7 @@
     }
     
 //     $(document).off('click', '.mobile_menu_toggle', toggleNav );
-    //$(document).on('click', '.mobile_menu_toggle', toggleNav );
+    $(document).on('click', '.mobile_menu_toggle', toggleNav );
    
 
 //})
