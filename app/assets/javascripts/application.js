@@ -24,7 +24,8 @@
 $( document ).on('turbolinks:load', function() {
   console.log("It works on each visit!")
     $(document).on('click', '.mobile_menu_toggle', function () {
-       $("nav.regions").toggle();
+       console.log(".mobile_menu_toggle clicked.");
+        $("nav.regions").toggle();
     })
 
 })
