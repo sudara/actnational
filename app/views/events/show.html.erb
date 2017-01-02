@@ -1,7 +1,7 @@
 <%= render "map" %>
 <%= render "regions/nav" %>
 <p id="notice"><%= notice.html_safe if notice %></p>
-                
+
 <h2><%= @event.name %></h2>
 
 <div class="sidebar">
@@ -57,5 +57,8 @@
     <%= @event.location_details %>
   </p>
 </div>
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
+
+<% if creator? or admin?  %>
+  <%= link_to 'EDIT', edit_event_path(@event) %> or 
+  <%= link_to 'DELETE', @event, method: :delete, data: { confirm: 'Are you sure?' } %> this event.
+<% end %>

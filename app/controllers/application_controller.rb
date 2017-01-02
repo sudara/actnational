@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
+  helper_method :admin?
   
   protected
   
@@ -14,7 +15,11 @@ class ApplicationController < ActionController::Base
 
   def restrict_access
     authenticate_or_request_with_http_basic('Administration') do |username, password|
-      username == ENV['BASIC_AUTH_USER'] && password == ENV['BASIC_AUTH_PASS']
+      session[:admin] = (username == ENV['BASIC_AUTH_USER'] && password == ENV['BASIC_AUTH_PASS'])
     end
+  end
+  
+  def admin?
+    session[:admin] == true
   end
 end

@@ -2,6 +2,8 @@ class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
   before_action :restrict_access_unless_creator, only: [:update, :edit, :destroy]
   
+  helper_method :creator?
+  
   # GET /events
   # GET /events.json
   def index
@@ -83,8 +85,12 @@ class EventsController < ApplicationController
         :contact_phone, :website, :address, :city, :state, 
         :zip, :location_details).merge(created_by_ip: request.remote_ip, created_by_session_id: session.id)
     end
+       
+    def restrict_access_unless_creator_or_admin
+      restrict_access unless creator? or admin?
+    end
     
-    def restrict_access_unless_creator
-      restrict_access unless @event.created_by_session_id == session.id
+    def creator?
+      @event.created_by_session_id == session.id
     end
 end
