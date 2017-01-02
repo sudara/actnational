@@ -1,7 +1,6 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
-  before_action :restrict_access, only: :destroy 
-  before_action :restrict_access_unless_creator, only: [:update, :edit]
+  before_action :restrict_access_unless_creator, only: [:update, :edit, :destroy]
   
   # GET /events
   # GET /events.json
