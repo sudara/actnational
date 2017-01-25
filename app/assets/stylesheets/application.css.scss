@@ -358,3 +358,25 @@ a,a:visited{
 	  }
   }
 }
+
+a.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: black;
+  padding: 15px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  &.edit{
+    background-color: orange; 
+    padding: 10px 20px;
+  }
+  &.delete{
+    background-color: red;     
+    padding: 10px 20px;
+  }
+  &:hover{
+    color: white;
+  }
+}

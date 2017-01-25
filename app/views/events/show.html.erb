@@ -10,41 +10,32 @@
 </div>
 <div>
   <p>
-    <strong>Description:</strong>
     <%= markdown(@event.description) %>
   </p>
 
   <p>
     <strong>Category:</strong>
-    <%= @event.category.name %>
-  </p>
-
-  <p>
+    <%= @event.category.name %><br/>
     <strong>Topic:</strong>
+    
     <%= @event.topic.name %>
   </p>
 
   <p>
     <strong>Start:</strong>
-    <%= @event.start.to_formatted_s(:friendly) %>
-  </p>
-
-  <p>
+    <%= @event.start.to_formatted_s(:friendly) %><br/>
     <strong>End:</strong>
     <%= @event.end.to_formatted_s(:friendly) if @event.end %>
   </p>
 
+  <% if @event.organizer.present? %>
   <p>
     <strong>Organized by:</strong><br/>
     <%= @event.organizer %><br/>
     <%= @event.contact_email %>
     <%= @event.contact_phone %>
   </p>
-
-  <p>
-    <strong>Website:</strong>
-    <%= link_to url_with_protocol(@event.website) if @event.website.present? %>
-  </p>
+  <% end %>
 
   <p>
     <strong>Address:</strong><br/>
@@ -52,13 +43,21 @@
     <%= @event.city %>, <%= @event.state %>, <%= @event.zip %>
   </p>
 
+  <% if @event.location_details.present? %>
   <p>
     <strong>Location details:</strong>
     <%= @event.location_details %>
   </p>
+  <% end %>
+  
+  <% if @event.website.present? %>
+  <p>
+    <%= link_to 'Visit Event Website', url_with_protocol(@event.website), class: 'button' %>
+  </p>
+  <% end %>
 </div>
 
 <% if creator? or admin?  %>
-  <%= link_to 'EDIT', edit_event_path(@event) %> or 
-  <%= link_to 'DELETE', @event, method: :delete, data: { confirm: 'Are you sure?' } %> this event.
+  <%= link_to 'EDIT', edit_event_path(@event), class: 'button edit' %> or 
+  <%= link_to 'DELETE', @event, method: :delete, data: { confirm: 'Are you sure?' },class: 'button delete'  %> this event.
 <% end %>
