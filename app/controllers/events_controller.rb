@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
-  before_action :restrict_access_unless_creator, only: [:update, :edit, :destroy]
+  before_action :restrict_access_unless_creator_or_admin, only: [:update, :edit, :destroy]
   
   helper_method :creator?
   
