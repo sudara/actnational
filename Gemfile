@@ -23,6 +23,7 @@ gem "recaptcha", require: "recaptcha/rails"
 gem "geocoder"
 gem "awesome_print"
 gem "redcarpet"
+gem "newrelic_rpm"
 
 group :production do
   gem 'pg'
